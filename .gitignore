@@ -4,3 +4,5 @@ build
 main
 http_requests
 cov.*
+# this is from the backend
+openapi.yaml

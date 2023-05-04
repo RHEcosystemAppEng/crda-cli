@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	"github.com/rhecosystemappeng/crda-cli/pkg/backend"
+	"github.com/rhecosystemappeng/crda-cli/pkg/backend/api"
 	"github.com/rhecosystemappeng/crda-cli/pkg/config"
 	"github.com/rhecosystemappeng/crda-cli/pkg/telemetry"
 	"github.com/rhecosystemappeng/crda-cli/pkg/utils"
@@ -101,7 +102,7 @@ func (a *JavaMavenAnalyzer) Analyze(ctx context.Context, ecosystem string, manif
 	}
 
 	if jsonOut {
-		var report []backend.DependencyAnalysisReport
+		var report []api.DependencyReport
 		if err := json.Unmarshal(*body, &report); err != nil {
 			return err
 		}
